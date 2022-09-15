@@ -11,6 +11,7 @@ window.addEventListener("load", function () {
   const form = document.querySelector("form");
   const inputEmail = document.querySelector("#inputEmail");
   const inputPassword = document.querySelector("#inputPassword");
+  const divErrores = this.document.querySelector(".errores");
 
   /* -------------------------------------------------------------------------- */
   /*            FUNCIÓN 1: Escuchamos el submit y preparamos el envío           */
@@ -56,6 +57,11 @@ window.addEventListener("load", function () {
           localStorage.setItem("jwt", data.jwt);
 
           location.replace("/mis-tareas.html");
+        } else {
+          divErrores.classList.remove("hidden");
+          divErrores.innerHTML = `<p>¡Ojo con estos errores!</p>
+          <p>${data}</p>
+          `;
         }
       });
   }
