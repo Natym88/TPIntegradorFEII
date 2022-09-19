@@ -30,7 +30,7 @@ Link con la documentación de los endpoints de la API y su funcionamiento:
 - [X] FUNCIÓN 4: Lograr que funcione el botón de crear nueva tarea.
 - [X] FUNCIÓN 5: Poder renderizar en pantalla las tareas según su estado, dentro del listado que corresponda.
 - [X] FUNCIÓN 6: Cambiar una tarea pendiente a terminada y viceversa.
-- [ ] FUNCIÓN 7: Eliminar definitivamente una tarea.
+- [X] FUNCIÓN 7: Eliminar definitivamente una tarea.
 
 ## Requerimiento no funcional
 - [ ] Desarrollar las validaciones de utils.js para su implementación.

@@ -111,6 +111,8 @@ window.addEventListener("load", function () {
         console.log(data);
         consultarTareas();
       });
+
+    nuevaTarea.value = ""
   });
 
   /* -------------------------------------------------------------------------- */
@@ -165,6 +167,15 @@ window.addEventListener("load", function () {
         botonesCambioEstado(event.target);
       });
     });
+
+    const botonesDelete = document.querySelectorAll(".borrar")
+    botonesDelete.forEach((boton) => {
+      boton.addEventListener("click", function (event) {
+        botonBorrarTarea(event.target);
+      });
+    });
+
+
   }
 
   /* -------------------------------------------------------------------------- */
@@ -199,5 +210,20 @@ window.addEventListener("load", function () {
   /* -------------------------------------------------------------------------- */
   /*                     FUNCIÓN 7 - Eliminar tarea [DELETE]                    */
   /* -------------------------------------------------------------------------- */
-  function botonBorrarTarea() {}
+  function botonBorrarTarea(nodo) {
+    const configuraciones = {
+      method: "DELETE",
+      headers: {
+        authorization: JWT,
+        "content-type": "application/json",
+      }
+    };
+
+    fetch(`${ENDPOINTBASE}/tasks/${nodo.id}`, configuraciones)
+      .then((ress) => ress.json())
+      .then((data) => {
+        console.log(data);
+        consultarTareas();
+      });
+  };
 });
